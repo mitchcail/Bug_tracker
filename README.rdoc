@@ -1,28 +1,17 @@
-== README
+# Bug Tracker
+****
+This is an implementation of a bug tracker as defined for Sysc 4806. This project will allow people to post bugs onto the site. Users can then attempt to fix bugs and get awarded points. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**achieved in sprint 1**
+- for this sprint we set up the project on git and on heroku. We also created a a skelton homepage and set the project up on cirlcle CI
 
-Things you may want to cover:
+**plans for sprint 2**
+- set up model for posting bugs to the site. A Bug will have a name description and link to the github repo. 
+- set up User model. For users we will be using devise, a rails gem for user authentication. Users will be able to search through bugs and attempt to solve bugs. Users will also be able to post bugs and award points to users for solving.
+- Get early functionality working on the app to give an early feel for what we plan to accomplish.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# Contributors
+****
+- **Mitch Cail**
+- **Mamoon Abdulhameed**
+- **Christopher Siewecke**
