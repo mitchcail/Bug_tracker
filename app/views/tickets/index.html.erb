@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Viewing all tickets</h1>
+    <% @tickets.each do | ticket |%>
+        <p><%=ticket.id %></p>
+        <p><%=ticket.name %></p>
+        <p><%=ticket.description %></p>
+    <% end%>
+
+</div>
