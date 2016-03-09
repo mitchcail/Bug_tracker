@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  resources :hunts
+  post "hunt/subcribe", to: "hunts#subscribe", as: "subscribe_to_hunt"
+  devise_for :users
+  devise_for :installs
+  
+  resources :tickets
   root 'static#home'
 
 

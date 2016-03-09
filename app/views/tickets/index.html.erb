@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Viewing all tickets</h1>
+    <% @tickets.each do | ticket |%>
+        <p><%=ticket.id %></p>
+        <p><%=ticket.name %></p>
+        <p><%=ticket.description %></p>
+        <br>
+        <% if user_signed_in? %>
+        	<%= button_to "hunt", subscribe_to_hunt_path(ticket_id: ticket.id) %>
+        <%end%>
+    <% end%>
+
+
+
+</div>
