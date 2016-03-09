@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :installs
   
   resources :tickets
-  root 'static#home'
+  root 'tickets#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

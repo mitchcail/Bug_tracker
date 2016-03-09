@@ -6,6 +6,12 @@ class TicketsController < ApplicationController
     @tickets=Ticket.all
   end
 
+  def show
+    @ticket  = Ticket.find(params[:id])
+
+    @hunters = @ticket.hunts
+  end
+
   def new
     @ticket = Ticket.new
   end

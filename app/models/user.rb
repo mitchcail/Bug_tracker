@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :tickets
   has_many :hunts
+  has_many :current_hunts, through: :hunts, source: :hunt
 end
