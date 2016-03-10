@@ -22,7 +22,7 @@
     		      <li class="collection-item"><%= User.find(user.user_id).email %></li>
                 <% end %>
 		    </ul>
-    	<% elsif current_user.hunts.exists?(ticket_id: @ticket.id)%>
+    	<% elsif @ticket.hunts.exists?(ticket_id: @ticket.id)%>
     		<h5> You have signed up for this </h5>
     	<% else %>
 
