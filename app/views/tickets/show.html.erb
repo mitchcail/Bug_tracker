@@ -10,7 +10,7 @@
     </div>
     <br>
     <% if user_signed_in? %>
-    	<% if current_user.hunts.exists?(user_id: current_user.id) %>
+    	<% if @ticket.hunts.exists?(user_id: current_user.id) %>
     		<h5>You are the creator of this ticket </h5>
     		<br>
     		<br>
@@ -22,7 +22,7 @@
     		      <li class="collection-item"><%= User.find(user.user_id).email %></li>
                 <% end %>
 		    </ul>
-    	<% elsif @ticket.hunts.exists?(ticket_id: @ticket.id)%>
+    	<% elsif current_user.hunts.exists?(ticket_id: @ticket.id)%>
     		<h5> You have signed up for this </h5>
     	<% else %>
 
