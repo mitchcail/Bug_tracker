@@ -13,11 +13,14 @@
     <div class="nav-wrapper">
       <a id="logo-container" href="/tickets" class="brand-logo" style="color: #FF9800">BugHunter</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <% if !user_signed_in? %>
+          <li><a href="/users/sign_in" style="color: blue">Sign In</a></li>
+        <% end %>
+
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#" style="color: blue">Sign In</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
