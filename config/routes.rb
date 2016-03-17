@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get "user/:id/profile", to: "profiles#show", as:"show_profile" #specify where to go in controller
   devise_for :users
   devise_for :installs
-  
   resources :tickets
   root 'tickets#index'
 
