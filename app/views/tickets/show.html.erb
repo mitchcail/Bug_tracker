@@ -2,6 +2,21 @@
     <br>
     <br>
 	<h1><%= @ticket.name %></h1>
+    <br>
+
+    <% if user_signed_in? %>
+        <% if @creator == current_user %>
+            <h6>added by you</h6>
+        <% else %>
+            <h6>added by <%= @creator.email %></h6>
+        <% end %>
+    <% else %>
+        <h6>added by <%= @creator.email %></h6>
+    <% end %>
+    
+    <%= link_to "Edit Ticket", edit_ticket_path(@ticket), class: "waves-effect waves-light btn"%>
+    <br>
+    <br>
     <div class="row">
     <div class="col s12">
       <ul class="tabs">

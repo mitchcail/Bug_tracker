@@ -30,7 +30,24 @@ class TicketsController < ApplicationController
     end
 
 
-   end
+  end
+
+  def edit
+    @ticket = Ticket.find(params[:id])
+  end
+
+  def update
+    @ticket = Ticket.find(params[:id])
+    respond_to do |format|
+      if @ticket.update(ticket_params)
+        format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
+        format.json { render :show, status: :ok, location: @ticket }
+      else
+        format.html { render :edit }
+        format.json { render json: @ticket.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
 
 

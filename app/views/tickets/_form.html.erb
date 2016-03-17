@@ -1,0 +1,56 @@
+<div class="card recipe-xtra z-depth-5">
+  <div class="container">
+    <br>
+    <br>
+      <%= form_for @ticket, html: { multipart: true } do |f| %>
+        <% if @ticket.errors.any? %>
+          <div class="card-panel menage z-depth-5">
+            <div id="error_explanation">
+              <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+              <ul>
+              <% @ticket.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <br>
+        <% end %>
+
+
+      <!-- ------- top area (name, description, photo) ------ -->
+  
+          <div class="input-field">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "menage"%><br/>
+            
+          </div>
+          <br>
+          <br>
+          <div class="input-field">
+            <%= f.text_area :description, class: "materialize-textarea" %>
+            <%= f.label :description %>
+          </div>
+
+          <br>
+          <br>
+
+
+      <!-- -------------------------------------------------- -->
+
+      <br>
+      <br>
+      
+
+      
+      
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="mdi-content-send right"></i>
+      </button>
+    <% end %>
+    <br>
+    <br>
+  </div>
+</div>
