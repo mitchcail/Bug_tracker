@@ -10,6 +10,8 @@ class TicketsController < ApplicationController
     @ticket  = Ticket.find(params[:id])
 
     @hunters = @ticket.hunts
+
+    @creator = @ticket.user
   end
 
   def new
