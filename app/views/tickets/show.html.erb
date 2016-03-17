@@ -9,6 +9,7 @@
             <h6>added by you</h6>
             <br>
              <%= link_to "Edit Ticket", edit_ticket_path(@ticket), class: "waves-effect waves-light btn"%>
+             <button class="waves-effect waves-light btn" id="close">Close issue and assign points</button>
         <% else %>
             <h6>added by <%= @creator.email %></h6>
         <% end %>
@@ -75,3 +76,9 @@
         <h5>Sign in to view this ticket</h5>
     <%end%>
 </div>
+
+<script>
+    $("#close").on("click", function(){
+        Materialize.toast('Chill out! this button dosent work yet', 4000)
+    })
+</script>
