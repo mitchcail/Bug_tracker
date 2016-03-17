@@ -1,13 +1,41 @@
 <div class="container">
+    <br>
+    <br>
 	<h1><%= @ticket.name %></h1>
-	<div class="row">
-      <div class="col s12 m10">
-        <div class="card-panel blue" style="background-color: #00BCD4 !important">
-          <span class="white-text"><h6 class="flow-text"><%= @ticket.description %>
-          </h6></span>
-        </div>
-      </div>
+    <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">Description</a></li>
+        <li class="tab col s3"><a href="#test2">github repo</a></li>
+        <li class="tab col s3"><a href="#test3">comments</a></li>
+        
+      </ul>
     </div>
+    <div id="test1" class="col s12" style="min-height: 300px">
+        <div class="row">
+          <div class="col s12 m10">
+            <br>
+            <br>
+            <blockquote>
+              <h4><%= @ticket.description %></h4>
+            </blockquote>
+            
+         
+          </div>
+        </div>
+    </div>
+    <div id="test2" class="col s12" style="min-height: 300px">
+        <br>
+        <br>
+        <h4>This is where the github repo will go for hunting the ticket</h4>
+    </div>
+    <div id="test3" class="col s12" style="min-height: 300px">
+        <br>
+        <br>
+        <h4>This is where comments will go. Users will need to be signed in to comment</h4></div>
+
+  </div>
+	
     <br>
     <% if user_signed_in? %>
     	<% if current_user == @creator %>
@@ -27,5 +55,7 @@
 
         <%= button_to "hunt", subscribe_to_hunt_path(ticket_id: @ticket.id), class: "waves-effect waves-light btn-large", style: "background-color: #FF9800" %>
         <% end %>
+    <% else %>
+        <h5>Sign in to view this ticket</h5>
     <%end%>
 </div>
