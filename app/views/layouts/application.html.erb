@@ -18,7 +18,7 @@
         <% else %>
           
           <li><%= link_to 'Sign Out', destroy_user_session_path, style:"color: blue", method: :delete %></li>
-          
+          <li><%= link_to 'create ticket', new_ticket_path, style:"color: blue" %></li>
         <% end %>
 
       </ul>
