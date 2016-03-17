@@ -15,9 +15,7 @@
                 </div>
                 <div class="card-action">
                   <%= link_to "view", ticket %>
-                  <% if user_signed_in? %>
-                    <%= link_to "hunt", subscribe_to_hunt_path(ticket_id: ticket.id) %>
-                  <%end%>
+                  
                 </div>
               </div>
             </div>
