@@ -11,7 +11,18 @@ This is an implementation of a bug tracker as defined for Sysc 4806. This projec
 - Get early functionality working on the app to give an early feel for what we plan to accomplish.
 
 # Contributors
-****
-- **Mitch Cail**
-- **Mamoon Abdulhameed**
-- **Christopher Siewecke**
+- Mitch Cail
+- Mamoon Abdulhameed
+- Christopher Siewecke
+
+March 13 Updates: 
+
+* cleared the bug log that were in the issues
+* created a profile page with list of tickets and hunts 
+* changed the layout of tickets 
+* started creating a way to close a ticket and assign points
+
+  Upcoming for the coming week 
+   * add commenting functionality for the site (users can comment on a bug hunt)
+   * add more tables to the user table (as defined in https://github.com/mitchcail/Bug_tracker/issues/14)
+   * come up with a scoring system
