@@ -7,6 +7,8 @@
     <% if user_signed_in? %>
         <% if @creator == current_user %>
             <h6>added by you</h6>
+            <br>
+             <%= link_to "Edit Ticket", edit_ticket_path(@ticket), class: "waves-effect waves-light btn"%>
         <% else %>
             <h6>added by <%= @creator.email %></h6>
         <% end %>
@@ -14,7 +16,6 @@
         <h6>added by <%= @creator.email %></h6>
     <% end %>
     
-    <%= link_to "Edit Ticket", edit_ticket_path(@ticket), class: "waves-effect waves-light btn"%>
     <br>
     <br>
     <div class="row">
