@@ -26,3 +26,7 @@ March 13 Updates:
    * add commenting functionality for the site (users can comment on a bug hunt)
    * add more tables to the user table (as defined in https://github.com/mitchcail/Bug_tracker/issues/14)
    * come up with a scoring system
+   
+March 18 Update:
+
+* created initial commenting functionality for the site
