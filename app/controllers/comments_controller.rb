@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
+  skip_before_filter :verify_authenticity_token
+
   # GET /comments
   # GET /comments.json
   def index
@@ -24,6 +26,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+
     @comment = Comment.new(comment_params)
 
     respond_to do |format|
@@ -35,6 +38,18 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def api_post
+
+    @comment = Comment.new
+    @comment.text = params[:comment]
+    @comment.user_id = params[:user_id]
+    @comment.ticket_id = params[:ticket_id]
+
+    @comment.save
+
+    render json: @comment.to_json
   end
 
   # PATCH/PUT /comments/1
