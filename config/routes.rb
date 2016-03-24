@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
+  resources :comments
+  post "tickets/api/comments/new", to: "comments#api_post"
   resources :hunts
   post "hunt/subcribe", to: "hunts#subscribe", as: "subscribe_to_hunt"
   get "user/:id/profile", to: "profiles#show", as:"show_profile" #specify where to go in controller
   devise_for :users
   devise_for :installs
-  resources :tickets
+  resources :tickets do
+    resources :comments
+  end
   root 'tickets#index'
 
 
