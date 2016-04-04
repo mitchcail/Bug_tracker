@@ -30,3 +30,8 @@ March 13 Updates:
 March 18 Update:
 
 * created initial commenting functionality for the site
+
+March 30 update:
+* working on scoring system
+* cleaning up the system so that is ready for users
+* clearing out the bugs 
