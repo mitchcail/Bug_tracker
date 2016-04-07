@@ -39,16 +39,35 @@ There will be three 2-week sprints after the project kickoff (i.e. sprint 0)
 - changed the layout of tickets 
 - started creating a way to close a ticket and assign points
 
-  Upcoming for the coming week 
-   * add commenting functionality for the site (users can comment on a bug hunt)
-   * add more tables to the user table (as defined in https://github.com/mitchcail/Bug_tracker/issues/14)
-   * come up with a scoring system
-   
-March 18 Update:
+**plans for sprint 2 scrum 4** (March 13th to March 20th)
+- add commenting functionality for the site (users can comment on a bug hunt)
+- add more tables to the user table (as defined in https://github.com/mitchcail/Bug_tracker/issues/14)
+- come up with a scoring system
 
-* created initial commenting functionality for the site
+**achieved in sprint 2 scrum 4** (March 13th to March 20th)
+- created initial commenting functionality for the site
 
-March 30 update:
-* working on scoring system
-* cleaning up the system so that is ready for users
-* clearing out the bugs 
+**plans for sprint 2 scrum 5** (March 20th to March 27th)
+- working on scoring system
+- cleaning up the system so that is ready for users
+- resolving bugs
+
+**achieved in sprint 2 scrum 5** (March 20th to March 27th)
+- due to poster fair week, not a lot of progress was made this scrum
+
+**plans for sprint 3 scrum 6** (March 27th to April 3rd)
+- working on scoring system
+- cleaning up the system so that is ready for users
+- clearing out the bugs  
+- add a search system
+- add ticket ID to ticket name
+
+**achieved in sprint 3 scrum 6** (March 27th to April 3rd)
+- finished designing and implementing the scoring system
+- cleaned up the comment section of a ticket and added functionality to refresh the page after adding a new comment
+- polished the profile page
+- added functionality to search for tickets using name and comment contents
+- added the display of internal ticket ID to tickets on the main page
+- added the ability to add a link to a ticket page
+- added circle tests
+- cleaned up the aesthetics of the site.
