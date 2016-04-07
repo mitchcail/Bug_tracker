@@ -3,7 +3,7 @@
 # Contributors
 - Mitch Cail
 - Mamoon Abdulhameed
-- Christopher Siewecke
+- Christophe Siewecke
 ****
 This is an implementation of a bug tracker as defined for Sysc 4806. This project will allow people to post bugs onto the site. Users can then attempt to fix bugs and get awarded points for doing so successfully.
 
