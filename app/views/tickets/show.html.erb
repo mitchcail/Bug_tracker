@@ -52,7 +52,11 @@
     <div id="test2" class="col s12" style="min-height: 300px">
         <br>
         <br>
-        <h5><%= link_to @ticket.repo_url, @ticket.repo_url %></h5>
+        <% if !@ticket.repo_url.nil? %>
+            <h5><%= link_to @ticket.repo_url, @ticket.repo_url %></h5>
+        <% else %>
+            <h5>no link was added</h5>
+        <%end%>
     </div>
     <div id="test3" class="col s12" style="min-height: 300px">
         <br>
