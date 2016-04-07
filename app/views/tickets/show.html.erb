@@ -49,7 +49,36 @@
     <div id="test3" class="col s12" style="min-height: 300px">
         <br>
         <br>
-        <h4>This is where comments will go. Users will need to be signed in to comment</h4></div>
+
+
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="comment" class="materialize-textarea"></textarea>
+                        <label for="comment">Add New Comment</label>
+                        <a class="waves-effect waves-light btn" id="add_comment">add comment</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row" id="commments-section">
+            <% @ticket.comments.each do | comment |%>
+            <div class="col s12 m12 l12">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+
+                        <h5><%=comment.text%></h5>
+                    </div>
+                    <div class="card-action">
+                       added by <%=link_to User.find(comment.user_id).email, show_profile_path(id: comment.user_id) %>
+                    </div>
+                </div>
+            </div>
+            <%end%>
+        </div>
+    </div>
 
   </div>
 	
@@ -77,8 +106,30 @@
     <%end%>
 </div>
 
+<<<<<<< HEAD
 <script>
     $("#close").on("click", function(){
         Materialize.toast('Chill out! this button dosent work yet', 4000)
     })
+=======
+
+<script>
+    $("#add_comment").click(function(){
+        var comment = $("#comment").val();
+        if(comment !== "") {
+            $.ajax({
+                type: 'POST',
+                url: "api/comments/new?comment="+comment+"&user_id="+<%= current_user.id %>+"&ticket_id="+<%= @ticket.id %>,
+                success(data){
+                      Materialize.toast('comment added', 4000) // 4000 is the duration of the toast
+                },
+                error(data){
+                      Materialize.toast('comment could not be created', 4000) // 4000 is the duration of the toast
+                }
+            })
+        }else{
+            Materialize.toast('comment cannot be empty', 4000)
+        }
+    });
+>>>>>>> d7114287ad799fdaa0b450f09570e24b0052495e
 </script>
