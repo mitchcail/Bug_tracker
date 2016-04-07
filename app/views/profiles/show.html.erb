@@ -62,7 +62,7 @@
                   <p><%=Ticket.find(hunt.ticket_id).description %></p>
                 </div>
                 <div class="card-action">
-                  <%= link_to "view", hunt %>
+                  <%= link_to "view", Ticket.find(hunt.ticket_id)%>
                 </div>
               </div>
             </div>
