@@ -179,6 +179,7 @@
                 url: "api/comments/new?comment="+comment+"&user_id="+<%= current_user.id %>+"&ticket_id="+<%= @ticket.id %>,
                 success(data){
                       Materialize.toast('comment added', 4000) // 4000 is the duration of the toast
+                      location.reload();
                 },
                 error(data){
                       Materialize.toast('comment could not be created', 4000) // 4000 is the duration of the toast
