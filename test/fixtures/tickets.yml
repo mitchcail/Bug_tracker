@@ -1,11 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
-  state: MyString
+  name: "MyString"
+  description: "MyText"
+  state: "open"
+  id: 1
+
 
 two:
   name: MyString
   description: MyText
   state: MyString
+  id: 2
