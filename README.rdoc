@@ -30,7 +30,8 @@ There will be three 2-week sprints after the project kickoff (i.e. sprint 0)
 
 **plans for sprint 1 scrum 3** (March 6th to March 13th)
 - deal with the bug log in github issues
-- 
+- create a profile page
+- modify the layout of the ticket page
 
 **achieved in sprint 1 scrum 3** (March 6th to March 13th)
 
