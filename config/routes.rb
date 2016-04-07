@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :comments
   post "tickets/api/comments/new", to: "comments#api_post"
+  post "tickets/api/winner", to: "tickets#close_ticket"
   resources :hunts
   post "hunt/subcribe", to: "hunts#subscribe", as: "subscribe_to_hunt"
   get "user/:id/profile", to: "profiles#show", as:"show_profile" #specify where to go in controller
