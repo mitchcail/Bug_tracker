@@ -50,10 +50,17 @@ class TicketsController < ApplicationController
   end
 
   def close_ticket
-    user = params[:user_id]
-    ticket = params[:ticket_id]
+    user_id = params[:user_id]
+    ticket_id = params[:ticket_id]
 
-    
+    ticket = Ticket.find(ticket_id)
+    ticket.state = "closed"
+    ticket.save
+
+    user = User.find(user_id)
+    user.score += 100
+    user.save
+
   end
 
 
