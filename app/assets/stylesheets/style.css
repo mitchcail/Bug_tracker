@@ -55,3 +55,7 @@ p {
 footer.page-footer {
   margin: 0;
 }
+nav form {
+  margin-left: 500px;
+  width: 300px;
+}
