@@ -5,7 +5,9 @@ class TicketsController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:close_ticket]
 
   def index
-    @tickets=Ticket.all.where(state: "open")
+    @q = Ticket.search(params[:q])
+
+    @tickets= @q.result
   end
 
   def show

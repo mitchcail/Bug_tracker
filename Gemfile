@@ -27,6 +27,8 @@ gem 'devise'
 
 gem "minitest-rails"
 
+gem 'ransack'
+
 
 
 # Use ActiveModel has_secure_password
