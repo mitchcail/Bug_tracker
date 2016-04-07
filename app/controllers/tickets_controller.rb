@@ -2,8 +2,10 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
+  skip_before_filter :verify_authenticity_token, only: [:close_ticket]
+
   def index
-    @tickets=Ticket.all
+    @tickets=Ticket.all.where(state: "open")
   end
 
   def show
@@ -58,8 +60,12 @@ class TicketsController < ApplicationController
     ticket.save
 
     user = User.find(user_id)
-    user.score += 100
+    user.score = 0 if user.score.nil?
     user.save
+    user.score = user.score+100
+    user.save
+
+    render json: {message: "closing"}
 
   end
 

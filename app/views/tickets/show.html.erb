@@ -8,8 +8,16 @@
         <% if @creator == current_user %>
             <h6>added by you</h6>
             <br>
+            <% if @ticket.state == "open" %>
              <%= link_to "Edit Ticket", edit_ticket_path(@ticket), class: "waves-effect waves-light btn"%>
-             <button class="waves-effect waves-light btn" id="close">Close issue and assign points</button>
+             
+                <button class="waves-effect waves-light btn" id="close">Close issue and assign points</button>
+             <%else%>
+                <div class="chip"> 
+                    Closed
+                </div>
+
+             <% end %>
         <% else %>
             <h6>added by <%= @creator.email %></h6>
         <% end %>
@@ -85,8 +93,7 @@
     <br>
     <% if user_signed_in? %>
     	<% if current_user == @creator %>
-    		<h5>You added this ticket </h5>
-    		<br>
+    		
     	
 
             <h5>you have <%= pluralize(@hunters.size, 'person') %> hunting this ticket</h5>
@@ -148,18 +155,15 @@
     $('.winner').on("click", function(){
         user_id = $(this).attr('id')
         $.ajax({
-                type: 'POST',
-                url: "api/winner?user_id="+user_id+"&ticket_id="+<%= @ticket.id %>,
-                success(data){
-                    alert("ticket is now set to closed")
-                },
-                error(data){
-                    Materialize.toast('winner could not be assigned', 4000) // 4000 is the duration of the toast
-                }
-            })
-        }else{
-            Materialize.toast('comment cannot be empty', 4000)
-        }
+            type: 'POST',
+            url: "api/winner?user_id="+user_id+"&ticket_id="+<%= @ticket.id %>,
+            success(data){
+                alert("ticket is now set to closed")
+            },
+            error(data){
+                Materialize.toast('winner could not be assigned', 4000) // 4000 is the duration of the toast
+            }
+        })
 
     })
 
