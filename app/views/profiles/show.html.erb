@@ -2,24 +2,28 @@
 	<br>
 	<br>
 	<center> <%= image_tag("male-shadow-fill-circle-512.png", height: '150', width: '150') %> </center>
-	<center><h5><%= @user.email%></h5></center>
+	<center><h5><%= @user.email%></h5><br><br><h3>Points: <%= @user.score %></h3> <h5>Level 3</h5><br><br><h6>how many points are needed until next level</h6></center>
 	<br>
 	<br>
         
         <body>
-        	<div class="container" >
-                    <center><div class="c100 p55 medium" align="center">
-                    <span>25</span>
-                    <div class="slice" align="center">
-                      <center>
-                        <div class="bar"></div>
-                        <div class="fill"></div>
-                    </div>
-                </div>
-                </center>
-              <br><br><br><br><br><br><br>
-                              <h4>Level 0</h4>
-              </center>
+        	<div class="container " >
+
+            <div  style="padding-left: 43%;">
+
+              <div class="c100 p55 medium " >
+                      <span><%= 350 - @user.score%></span>
+                      <div class="slice" >
+                      
+                          <div class="bar"></div>
+                          <div class="fill"></div>
+                      </div>
+                  </div>
+                 
+                <br><br><br><br><br><br><br>
+                
+               
+           </div>
 
 
     <h5>Tickets</h5>
