@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   post "hunt/subcribe", to: "hunts#subscribe", as: "subscribe_to_hunt"
   get "user/:id/profile", to: "profiles#show", as:"show_profile" #specify where to go in controller
   devise_for :users
-  devise_for :installs
   resources :tickets do
     resources :comments
   end
