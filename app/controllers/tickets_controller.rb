@@ -49,6 +49,13 @@ class TicketsController < ApplicationController
     end
   end
 
+  def close_ticket
+    user = params[:user_id]
+    ticket = params[:ticket_id]
+
+    
+  end
+
 
 
    def ticket_params

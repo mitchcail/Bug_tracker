@@ -106,14 +106,63 @@
     <%end%>
 </div>
 
-<<<<<<< HEAD
-<script>
-    $("#close").on("click", function(){
-        Materialize.toast('Chill out! this button dosent work yet', 4000)
-    })
-=======
+<div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Ready to close bug hunt</h4>
+      <div class= "container">
+            <br>
+            <br>
+            <h5>Assign winner</h5>
+            <br>
+            <br>
+          <% @hunters.each do |user|%>
+            <h6><%= User.find(user.user_id).email %> | <span style="color:blue" class="winner" id="<%= user.user_id%>">winner</span></h6>
+          <% end %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+    </div>
+</div>
+
+<div id="confirm_modal" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 
 <script>
+     $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+
+    $("#close").on("click", function(){
+        $('#modal1').openModal();
+    })
+
+    $('.winner').on("click", function(){
+        user_id = $(this).attr('id')
+        $.ajax({
+                type: 'POST',
+                url: "api/winner?user_id="+user_id+"&ticket_id="+<%= @ticket.id %>,
+                success(data){
+                    alert("ticket is now set to closed")
+                },
+                error(data){
+                    Materialize.toast('winner could not be assigned', 4000) // 4000 is the duration of the toast
+                }
+            })
+        }else{
+            Materialize.toast('comment cannot be empty', 4000)
+        }
+
+    })
+
     $("#add_comment").click(function(){
         var comment = $("#comment").val();
         if(comment !== "") {
@@ -131,5 +180,5 @@
             Materialize.toast('comment cannot be empty', 4000)
         }
     });
->>>>>>> d7114287ad799fdaa0b450f09570e24b0052495e
+
 </script>
