@@ -3,7 +3,7 @@
 # Contributors
 - Mitch Cail
 - Mamoon Abdulhameed
-- Christopher Siewecke
+- Christophe Siewecke
 ****
 This is an implementation of a bug tracker as defined for Sysc 4806. This project will allow people to post bugs onto the site. Users can then attempt to fix bugs and get awarded points for doing so successfully.
 
@@ -30,7 +30,8 @@ There will be three 2-week sprints after the project kickoff (i.e. sprint 0)
 
 **plans for sprint 1 scrum 3** (March 6th to March 13th)
 - deal with the bug log in github issues
-- 
+- create a profile page
+- modify the layout of the ticket page
 
 **achieved in sprint 1 scrum 3** (March 6th to March 13th)
 
